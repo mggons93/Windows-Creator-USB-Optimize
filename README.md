@@ -10,7 +10,7 @@ para que se cree la usb booteable, la optimize y le agregue los drivers SSD y NV
 ## Video de Muestra
 [Haz clic aquí para ver el video de ejemplo](https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/main/Metodo%20de%20creacion%20de%20USB.mp4)
 
-#Funciones del Windows USB Creator Optimize
+## Funciones del Windows USB Creator Optimize
 
 **Escaneo de discos USB:**
 Permite al usuario buscar y seleccionar un disco USB conectado al equipo para usarlo como destino. Muestra los discos detectados y su tamaño en la interfaz.
