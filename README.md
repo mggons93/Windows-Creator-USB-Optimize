@@ -1,7 +1,11 @@
 # Windows-Creator-USB-Optimize
 Creador de Windows 10/11 Booteable + Optimizador 
 
-```
+## Imagen de Muestra
+<p align="center">
+<a href=></a><img src="https://i.ibb.co/4gJMs3yd/Captura-de-pantalla-2025-05-23-112244.png"/>
+</p>
+
 **Escaneo de discos USB:**
 Permite al usuario buscar y seleccionar un disco USB conectado al equipo para usarlo como destino. Muestra los discos detectados y su tamaño en la interfaz.
 
@@ -28,4 +32,4 @@ Descarga un archivo autounattend.xml desde GitHub al USB para automatizar la ins
 
 **Finalización:**
 Desmonta la ISO, habilita nuevamente el botón de inicio y muestra mensajes de éxito o error en la interfaz gráfica.
-```
+
