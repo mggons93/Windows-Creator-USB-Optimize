@@ -3,7 +3,7 @@ Creador de Windows 10/11 Booteable + Optimizador
 
 ## Imagen de Muestra
 <p align="center">
-<a href=></a><img src="https://i.ibb.co/4gJMs3yd/Captura-de-pantalla-2025-05-23-112244.png"/>
+<a href=></a><img src="https://raw.githubusercontent.com/mggons93/Windows-Creator-USB-Optimize/refs/heads/main/CreatorFinal.png"/>
 </p>
 
 **Escaneo de discos USB:**
