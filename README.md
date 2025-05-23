@@ -3,13 +3,13 @@ Es una Herramienta que te permite generar una imagen de Windows Completa usando 
 para que se cree la usb booteable, la optimize y le agregue los drivers SSD y NVMe dentro del mismo Boot.wim
 
 
-## Imagen de Muestra
+## 🖼️ Imagen de Muestra
 <p align="center">
 <a href=></a><img src="https://raw.githubusercontent.com/mggons93/Windows-Creator-USB-Optimize/refs/heads/main/CreatorFinal.png"/>
 </p>
 
 ## 🎥 Video de Muestra  
-👉 [Haz clic aquí para ver el video de ejemplo](https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/main/Metodo%20de%20creacion%20de%20USB.mp4)
+👉 [Haz clic aquí para ver el video](https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/main/Metodo%20de%20creacion%20de%20USB.mp4)
 
 
 ## Funciones del Windows USB Creator Optimize
