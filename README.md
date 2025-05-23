@@ -40,3 +40,6 @@ Descarga un archivo autounattend.xml desde GitHub al USB para automatizar la ins
 **Finalización:**
 Desmonta la ISO, habilita nuevamente el botón de inicio y muestra mensajes de éxito o error en la interfaz gráfica.
 
+<video src="https://user-images.githubusercontent.com/xxxxxxx/yourvideo.mp4" controls="controls" style="max-width: 730px;">
+</video>
+
