@@ -12,6 +12,10 @@ para que se cree la usb booteable, la optimize y le agregue los drivers SSD y NV
 <p align="center">
 <a href=></a><img src="https://raw.githubusercontent.com/mggons93/Windows-Creator-USB-Optimize/refs/heads/main/CreatorFinal.png"/>
 </p>
+## Video de Muestra
+[Haz clic aquí para ver el video de ejemplo](https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/main/Metodo%20de%20creacion%20de%20USB.mp4)
+
+#Funciones del Windows USB Creator Optimize
 
 **Escaneo de discos USB:**
 Permite al usuario buscar y seleccionar un disco USB conectado al equipo para usarlo como destino. Muestra los discos detectados y su tamaño en la interfaz.
@@ -39,9 +43,3 @@ Descarga un archivo autounattend.xml desde GitHub al USB para automatizar la ins
 
 **Finalización:**
 Desmonta la ISO, habilita nuevamente el botón de inicio y muestra mensajes de éxito o error en la interfaz gráfica.
-
-## Video de Muestra
-<p align="center">
-[Haz clic aquí para ver el video de ejemplo](https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/main/Metodo%20de%20creacion%20de%20USB.mp4)
-</p>
-
