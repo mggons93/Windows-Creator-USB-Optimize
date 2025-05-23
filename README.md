@@ -42,7 +42,6 @@ Desmonta la ISO, habilita nuevamente el botón de inicio y muestra mensajes de �
 
 ## Video de Muestra
 <p align="center">
-<video src="https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/refs/heads/main/Metodo%20de%20creacion%20de%20USB.mp4" controls="controls" style="max-width: 730px;">
-</video>
+[Haz clic aquí para ver el video de ejemplo](https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/main/Metodo%20de%20creacion%20de%20USB.mp4)
 </p>
 
