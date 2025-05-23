@@ -21,7 +21,7 @@ Permite al usuario buscar y seleccionar un disco USB conectado al equipo para us
 Permite al usuario buscar y seleccionar un archivo ISO de Windows 10/11 desde una carpeta. Los archivos encontrados se listan para su selección.
 
 **Inicio del proceso de creación del USB booteable:**
-Al pulsar "Iniciar", el script verifica que se haya seleccionado un disco y un archivo ISO, y solicita confirmación al usuario antes de formatear el disco USB.
+Al pulsar "Iniciar", verifica que se haya seleccionado un disco y un archivo ISO, y solicita confirmación al usuario antes de formatear el disco USB.
 
 **Formateo del USB:**
 Utiliza diskpart para limpiar el disco seleccionado, convertirlo a MBR, crear una partición primaria, activarla y formatearla en FAT32.
