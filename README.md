@@ -1,5 +1,12 @@
 # Windows-Creator-USB-Optimize
-Creador de Windows 10/11 Booteable + Optimizador 
+Creador de Windows 10/11 Booteable + Optimizador
+
+```
+Windows Creator USB Optimize
+
+Es una Herramienta que te permite generar una imagen de Windows Completa usando la base de una iso original y adaptandola
+para que se cree la usb booteable, la optimize y le agregue los drivers SSD y NVMe dentro del mismo Boot.wim
+```
 
 ## Imagen de Muestra
 <p align="center">
