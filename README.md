@@ -19,29 +19,122 @@ para que se cree la usb booteable, la optimize y le agregue los drivers SSD y NV
 
 ## Funciones del Windows USB Creator Optimize
 
-**Escaneo de discos USB:**
-Permite al usuario buscar y seleccionar un disco USB conectado al equipo para usarlo como destino. Muestra los discos detectados y su tamaño en la interfaz.
+### 💽 Listado y selección de discos USB
 
-**Búsqueda de archivos ISO:**
-Permite al usuario buscar y seleccionar un archivo ISO de Windows 10/11 desde una carpeta. Los archivos encontrados se listan para su selección.
+Permite visualizar y seleccionar los discos disponibles en el equipo para utilizarlos como destino de la creación del USB booteable.
 
-**Inicio del proceso de creación del USB booteable:**
-Al pulsar "Iniciar", verifica que se haya seleccionado un disco y un archivo ISO, y solicita confirmación al usuario antes de formatear el disco USB.
+La interfaz muestra información de las unidades detectadas, incluyendo su capacidad, siguiendo un funcionamiento similar al utilizado por **Rufus**.
 
-**Formateo del USB:**
-Utiliza diskpart para limpiar el disco seleccionado, convertirlo a MBR, crear una partición primaria, activarla y formatearla en FAT32.
+### 💿 Búsqueda y selección de archivos ISO
 
-**Montaje de la ISO:**
+Permite seleccionar una imagen ISO de Windows 10/11 mediante el botón de búsqueda identificado con un **icono de disco**.
+
+La interfaz permite seleccionar fácilmente la ISO que será utilizada durante el proceso.
+
+### 🚀 Creación del USB booteable
+
+Al pulsar **Iniciar**, el programa verifica que se haya seleccionado una unidad de destino y una imagen ISO.
+
+Antes de modificar el disco seleccionado, se solicita confirmación al usuario.
+
+Durante la creación, la interfaz se bloquea para evitar modificaciones accidentales y el botón **Iniciar** cambia a **Cancelar**.
+
+### 💾 Formateo del USB
+
+Utiliza `diskpart` para preparar el disco seleccionado, incluyendo:
+
+* Limpieza del disco.
+* Conversión a MBR.
+* Creación de una partición primaria.
+* Activación de la partición.
+* Formateo en FAT32.
+
+### 📦 Montaje y procesamiento de la ISO
+
 Monta la imagen ISO seleccionada y obtiene la letra de la unidad virtual para acceder a sus archivos.
 
-**Copia de archivos y manejo de archivos grandes:**
-Si el archivo install.wim de la ISO es mayor a 4GB, lo divide en fragmentos .swm usando DISM, ya que FAT32 no soporta archivos mayores a 4GB. Copia todos los archivos de la ISO al USB, excluyendo los grandes inicialmente, y luego copia los fragmentos o el archivo install.wim si corresponde.
+Los archivos de instalación se procesan y copian al USB manteniendo la estructura necesaria para que la unidad sea booteable.
 
-**Reemplazo de boot.wim con drivers NVMe:**
-Verifica la versión de boot.wim usando DISM y descarga una versión personalizada con controladores NVMe adecuada para Windows 10 u 11, reemplazando el archivo en el USB.
+### ✂️ División de archivos `install.wim`
 
-**Descarga de archivo de autoinstalación:**
-Descarga un archivo autounattend.xml desde GitHub al USB para automatizar la instalación de Windows.
+Cuando el archivo `install.wim` supera el límite de aproximadamente **4 GB** de FAT32, se divide utilizando **DISM** en varios archivos `.swm`.
 
-**Finalización:**
-Desmonta la ISO, habilita nuevamente el botón de inicio y muestra mensajes de éxito o error en la interfaz gráfica.
+El proceso muestra en el log el número de *splits* generados:
+
+```text
+1 split
+2 splits
+3 splits
+...
+```
+
+### 📥 Drivers NVMe
+
+Se habilitó la **descarga automática de drivers NVMe** necesarios para mejorar la compatibilidad durante la instalación de Windows.
+
+Los controladores NVMe se gestionan automáticamente durante el proceso de creación del USB.
+
+### 📁 Archivos NVMe en la raíz del USB
+
+Se mantiene disponible la opción para colocar los archivos de soporte NVMe directamente en la **raíz del USB**.
+
+Esta opción queda habilitada por defecto.
+
+### ⚙️ Archivo de autoinstalación
+
+Descarga el archivo `autounattend.xml` desde GitHub y lo incorpora al USB para automatizar determinadas partes del proceso de instalación de Windows.
+
+### 🔒 Control de la interfaz durante el proceso
+
+Mientras se está creando el USB, se bloquean temporalmente determinadas opciones de la interfaz para evitar interrupciones:
+
+* Cerrar
+* Minimizar
+* Archivo
+* Herramientas
+* Buscar ISO
+
+Al finalizar o cancelar el proceso, la interfaz vuelve a estar disponible.
+
+### ❌ Cancelación del proceso
+
+El botón **Cancelar** permite solicitar la interrupción del proceso.
+
+Antes de cancelar se muestra una confirmación:
+
+> **¿Desea cancelar la operación?**
+
+### 🎨 Estado del botón de inicio
+
+El botón principal cambia de estado según la operación:
+
+* 🟢 **Iniciar** — disponible antes de comenzar.
+* 🔴 **Cancelar** — aparece mientras el proceso está en ejecución.
+* 🟢 **Iniciar** — vuelve a estar disponible al finalizar.
+
+### 📊 Registro del proceso
+
+El log muestra información sobre las diferentes etapas de creación del USB, incluyendo:
+
+* Detección y selección del disco.
+* Montaje de la ISO.
+* Copia de archivos.
+* División de `install.wim`.
+* Descarga y gestión de drivers NVMe.
+* Estado de la operación.
+* Resultado final.
+
+### 🖥️ Compatibilidad con Windows
+
+El proyecto está diseñado para trabajar con imágenes de instalación de **Windows 10 y Windows 11**, incluyendo el procesamiento de imágenes `install.wim` y la preparación de medios USB compatibles con FAT32.
+
+### ✅ Finalización
+
+Al finalizar el proceso:
+
+* Se desmonta la imagen ISO.
+* Se restaura el estado de la interfaz.
+* El botón **Cancelar** vuelve a **Iniciar**.
+* Se muestran mensajes indicando si el proceso terminó correctamente o si ocurrió algún error.
+* La información del proceso permanece disponible en el log para facilitar la revisión.
+ente el botón de inicio y muestra mensajes de éxito o error en la interfaz gráfica.
