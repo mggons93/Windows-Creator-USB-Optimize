@@ -17,8 +17,6 @@ para que se cree la usb booteable, la optimize y le agregue los drivers SSD y NV
 👉 [Haz clic aquí para ver el video](https://github.com/mggons93/Windows-Creator-USB-Optimize/raw/main/Metodo%20de%20creacion%20de%20USB.mp4)
 
 
-## Funciones del Windows USB Creator Optimize
-
 ### 💽 Listado y selección de discos USB
 
 Permite visualizar y seleccionar los discos disponibles en el equipo para utilizarlos como destino de la creación del USB booteable.
@@ -84,15 +82,18 @@ Esta opción queda habilitada por defecto.
 
 Descarga el archivo `autounattend.xml` desde GitHub y lo incorpora al USB para automatizar determinadas partes del proceso de instalación de Windows.
 
+Cuando se selecciona **Sin Desatendido**, no se descarga ni se crea ningún archivo de configuración desatendida.
+
 ### 🔒 Control de la interfaz durante el proceso
 
 Mientras se está creando el USB, se bloquean temporalmente determinadas opciones de la interfaz para evitar interrupciones:
 
-* Cerrar
-* Minimizar
-* Archivo
-* Herramientas
-* Buscar ISO
+* Cerrar.
+* Minimizar.
+* Archivo.
+* Herramientas.
+* Buscar ISO.
+* ISO Linux a USB.
 
 Al finalizar o cancelar el proceso, la interfaz vuelve a estar disponible.
 
@@ -103,6 +104,8 @@ El botón **Cancelar** permite solicitar la interrupción del proceso.
 Antes de cancelar se muestra una confirmación:
 
 > **¿Desea cancelar la operación?**
+
+Si la operación está ejecutando DISM, también se detiene el proceso y sus procesos secundarios. Después se desmonta la imagen ISO para completar la limpieza.
 
 ### 🎨 Estado del botón de inicio
 
@@ -118,7 +121,8 @@ El log muestra información sobre las diferentes etapas de creación del USB, in
 
 * Detección y selección del disco.
 * Montaje de la ISO.
-* Copia de archivos.
+* Copia individual de los archivos base.
+* Copia de archivos por bloques y progreso.
 * División de `install.wim`.
 * Descarga y gestión de drivers NVMe.
 * Estado de la operación.
@@ -127,6 +131,25 @@ El log muestra información sobre las diferentes etapas de creación del USB, in
 ### 🖥️ Compatibilidad con Windows
 
 El proyecto está diseñado para trabajar con imágenes de instalación de **Windows 10 y Windows 11**, incluyendo el procesamiento de imágenes `install.wim` y la preparación de medios USB compatibles con FAT32.
+
+## Funciones nuevas de la versión 3.4
+
+### 🐧 Creación de USB Linux
+
+* Panel independiente para crear USB booteables de Ubuntu, Debian y otras distribuciones Linux.
+* Modos de escritura ISO y DD.
+* Detección de imágenes ISO híbridas.
+* Montaje, copia y desmontaje automático de la ISO.
+* Barra de progreso y registro de archivos copiados.
+
+### 🔌 Detección avanzada de dispositivos
+
+* Modo **Solo USB** para mostrar únicamente dispositivos USB compatibles.
+* Detección de dispositivos USB 3.0 y UAS.
+* Detección de discos SCSI conectados mediante USB/UAS.
+* Opción **Listar USB|HDD|SSD** para mostrar USB, UAS/SCSI y discos HDD/SSD externos.
+* Refresco automático del selector al conectar o desconectar dispositivos.
+* Los dispositivos USB aparecen antes que los discos HDD/SSD.
 
 ### ✅ Finalización
 
@@ -137,4 +160,3 @@ Al finalizar el proceso:
 * El botón **Cancelar** vuelve a **Iniciar**.
 * Se muestran mensajes indicando si el proceso terminó correctamente o si ocurrió algún error.
 * La información del proceso permanece disponible en el log para facilitar la revisión.
-ente el botón de inicio y muestra mensajes de éxito o error en la interfaz gráfica.
