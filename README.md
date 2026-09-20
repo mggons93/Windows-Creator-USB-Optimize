@@ -5,7 +5,7 @@ para que se cree la usb booteable, la optimize y le agregue los drivers SSD y NV
 
 ## 🖼️ Imagen de Muestra
 <p align="center">
-<a href=></a><img src="https://raw.githubusercontent.com/mggons93/Windows-Creator-USB-Optimize/refs/heads/main/CreatorFinal.png"/>
+<a href=></a><img src="https://raw.githubusercontent.com/mggons93/Windows-Creator-USB-Optimize/refs/heads/main/WindowsUSBCreator.png"/>
 </p>
 
 ## 🎥 Video de Muestra  
